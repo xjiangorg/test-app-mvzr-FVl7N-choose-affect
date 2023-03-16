@@ -25,7 +25,7 @@ spec:
         app.kubernetes.io/instance: test-component-vdgr
     spec:
       containers:
-      - image: quay.io/redhat-appstudio-qe/test-images:6f4d8609f5154bbf83614b171216b7cc
+      - image: quay.io/redhat-appstudio-qe/test-images@sha256:7b74aa334cd72bd9257d0cab505f05d1dae2cfabcad1bacd2e6baabce71de9e1
         name: my-python
         ports:
         - containerPort: 8081
