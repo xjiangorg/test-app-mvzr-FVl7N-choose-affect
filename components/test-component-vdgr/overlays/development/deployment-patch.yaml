@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: test-component-vdgr
+  namespace: build-e2e-ercq-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio-qe/test-images@sha256:7b74aa334cd72bd9257d0cab505f05d1dae2cfabcad1bacd2e6baabce71de9e1
+        name: my-python
+        resources: {}
+status: {}
