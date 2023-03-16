@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: test-component-vdgr
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: test-component-vdgr
+    app.kubernetes.io/part-of: test-app-mvzr
+  name: test-component-vdgr
+  namespace: build-e2e-ercq-tenant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-app
+      app.kubernetes.io/instance: test-component-vdgr
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: python-app
+        app.kubernetes.io/instance: test-component-vdgr
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio-qe/test-images:6f4d8609f5154bbf83614b171216b7cc
+        name: my-python
+        ports:
+        - containerPort: 8081
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 100m
+            memory: 100Mi
+          requests:
+            cpu: 10m
+            memory: 50Mi
+status: {}
